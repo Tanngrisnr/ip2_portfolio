@@ -41,5 +41,5 @@ const WEATHER_DATA = {
     "name": "Stockholm",
     "cod": 200
 }
-// made with: api.openweathermap.org/data/2.5/weather?q=Stockholm&units=metric&appid=f2eb762353dd6b9f926b406db34c6ae1
+
 export default WEATHER_DATA;
