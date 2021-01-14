@@ -1,16 +1,15 @@
 import Clock from "react-live-clock";
-import currentWeather from './currentWeather';
+import CurrentWeather from './CurrentWeather'
 
-const weatherWidget = () => {
+const CurrentStockholm = () => {
     return ( 
         <div>
-        <currentWeather/>
+        <CurrentWeather/>
         <Clock
             format={'HH:mm:ss'}
             ticking={true}
             timezone={'Europe/Stockholm'} />
       </div>
      );
-}
- 
-export default weatherWidget;
+  }
+export default CurrentStockholm;
