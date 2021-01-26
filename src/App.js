@@ -8,6 +8,7 @@ import {
   Route,
 } from "react-router-dom";
 import React, { useEffect, useState, useRef } from 'react';
+import WEATHER_DATA from './data';
 import CurrentStockholm from "./CurrentStockholm";
 import Contact from './Contact';
 import About from './About';
@@ -16,10 +17,6 @@ import Home from './Home';
 import Navigation from './menu/Navigation';
 import Burger from "./menu/Burger";
 import useOnClickOutside from './menu/hooks'
-
-
-
-const url = "http://api.openweathermap.org/data/2.5/weather?q=Stockholm&units=metric&appid=f2eb762353dd6b9f926b406db34c6ae1"
 
 function App() {
 
@@ -33,7 +30,7 @@ function App() {
 
   useEffect(() => {
       console.log("Hej från useEffect");
-      fetch(url)
+      fetch(WEATHER_DATA)
           .then(response => response.json())
           .then(json => setData({ data: json }));
   }, []);

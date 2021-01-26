@@ -1,4 +1,7 @@
-const WEATHER_DATA = {
+const WEATHER_DATA = "http://api.openweathermap.org/data/2.5/weather?q=Stockholm&units=metric&appid=f2eb762353dd6b9f926b406db34c6ae1"
+
+
+/* {
     "coord": {
         "lon": 18.0649,
         "lat": 59.3326
@@ -41,5 +44,5 @@ const WEATHER_DATA = {
     "name": "Stockholm",
     "cod": 200
 }
-
+ */
 export default WEATHER_DATA;
