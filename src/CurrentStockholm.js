@@ -1,19 +1,13 @@
 import Clock from "react-live-clock";
-import WEATHER_DATA from './data.js'
-import Emoji from 'a11y-react-emoji'
+import Emoji from 'a11y-react-emoji';
+import styled from 'styled-components';
+
+
 
 
 
 const CurrentStockholm = ({description, temp, location, weather_id}) => {
 
-    
-/*     const weather = {
-        weather: WEATHER_DATA.weather[0].main,
-        description: WEATHER_DATA.weather[0].description,
-        temp: WEATHER_DATA.main.temp,
-        name: WEATHER_DATA.name,
-        weather_id: WEATHER_DATA.weather[0].id,
-    } */
     const icon = {
         emoji: null,
         label: null
