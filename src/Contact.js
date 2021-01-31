@@ -1,6 +1,10 @@
+import {StyledSection} from './styles/global'
+
+
 const Contact = () => {
     return (  
-        <h2>Hello Contact</h2>
+        <StyledSection><h2>Hello Contact</h2></StyledSection>
+
     );
 }
  

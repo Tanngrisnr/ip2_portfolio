@@ -1,6 +1,8 @@
+import {StyledSection} from './styles/global'
+
 const Projects = () => {
     return ( 
-        <h2>Projects</h2>
+        <StyledSection><h2>Projects</h2></StyledSection>
      );
 }
  

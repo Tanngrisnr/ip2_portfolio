@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {ThemeProvider} from 'styled-components'
-import {Normalize} from './styles/global'
+import {Normalize, StyledSection} from './styles/global'
 import {theme} from './styles/theme';
 import {
   BrowserRouter as Router,
@@ -17,6 +17,13 @@ import Home from './Home';
 import Navigation from './menu/Navigation';
 import Burger from "./menu/Burger";
 import useOnClickOutside from './menu/hooks'
+
+const StyledMain = styled.main`
+  display:flex;
+  flex-direction:row;
+
+
+`;
 
 function App() {
 
@@ -44,19 +51,21 @@ function App() {
     <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
     <Navigation open={open} setOpen={setOpen} id={menuId} />
     </div>
+    <StyledSection>
+        <Switch>
+          <Route path="/contact"><Contact/></Route>
+          <Route path="/about"><About/></Route>
+          <Route path="/projects"><Projects/></Route>
+          <Route path="/"><Home/></Route>
+        </Switch>
+        {data.data ? <CurrentStockholm
+        description={data.data.weather[0].description}
+        temp={data.data.main.temp}
+        location={data.data.name}
+        weather_id={data.data.weather[0].id}
+        /> : null}
+    </StyledSection>
 
-    {data.data ? <CurrentStockholm
-    description={data.data.weather[0].description}
-    temp={data.data.main.temp}
-    location={data.data.name}
-    weather_id={data.data.weather[0].id}
-    /> : null}
-    <Switch>
-      <Route path="/contact"><Contact/></Route>
-      <Route path="/about"><About/></Route>
-      <Route path="/projects"><Projects/></Route>
-      <Route path="/"><Home/></Route>
-    </Switch>
     </ThemeProvider>
   </Router>
   );

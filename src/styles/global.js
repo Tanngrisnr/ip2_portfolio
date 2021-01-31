@@ -1,4 +1,7 @@
 import { createGlobalStyle } from "styled-components";
+import styled from 'styled-components';
+
+
 
 
 export const Normalize = createGlobalStyle`
@@ -30,9 +33,6 @@ export const Normalize = createGlobalStyle`
     height: auto;
     width: 10rem;
   }
-  div {
-    text-align: center;
-  }
   small {
     display: block;
   }
@@ -40,5 +40,10 @@ export const Normalize = createGlobalStyle`
     color: ${({ theme }) => theme.primaryHover};
     text-decoration: none;
   }
+
+`;
+
+export const StyledSection = styled.section`
+  display:flex;
 
 `;

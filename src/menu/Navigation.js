@@ -22,7 +22,7 @@ const StyledNav = styled.nav`
   }`
 
 const StyledLink = styled(Link)`
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
     padding: 2rem 0;
     font-weight: bold;
@@ -50,7 +50,7 @@ const Navigation = ({open, setOpen, ...props}) => {
     return ( 
         <StyledNav open={open}>
         <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/">Home</StyledLink>
-        <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/about">About</StyledLink>
+        <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/about">About Me</StyledLink>
         <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/projects">Projects</StyledLink>
         <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/contact">Contact</StyledLink>
         </StyledNav>

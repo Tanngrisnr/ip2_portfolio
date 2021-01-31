@@ -5,6 +5,25 @@ import styled from 'styled-components';
 
 
 
+const WeatherWidget = styled.div`
+display: flex;
+flex-wrap: wrap;
+flex-direction:column;
+border-radius:10px;
+background-color: ${({ theme }) => theme.primaryLight};
+color: ${({theme}) => theme.primaryDark};
+&>*{
+    flex-grow:1;
+    padding:2%;
+    ::first-letter{
+        text-transform:capitalize;
+    }
+}
+`;
+const StyledEmoji = styled(Emoji)`
+font-size:4rem;
+width: 100%;
+`
 
 const CurrentStockholm = ({description, temp, location, weather_id}) => {
 
@@ -59,18 +78,16 @@ const CurrentStockholm = ({description, temp, location, weather_id}) => {
     }
     filterIcon(weather_id);
     return ( 
-        <div>
-        <ul>
-           <li><Emoji symbol={icon.emoji} label={icon.label}/></li>
-           <li>{description}</li>
-           <li>{temp} C</li>
-           <li>{location}</li>
-           <li><Clock
+        <WeatherWidget>
+           <StyledEmoji symbol={icon.emoji} label={icon.label}/>
+           <span>{description} </span>
+           <span>{temp} C</span>
+            <Clock
             format={'HH:mm:ss'}
             ticking={true}
-            timezone={'Europe/Stockholm'} /></li>
-       </ul>
-      </div>
+            timezone={'Europe/Stockholm'} />
+            <span>{location}</span>
+        </WeatherWidget>
      );
   }
 export default CurrentStockholm;
