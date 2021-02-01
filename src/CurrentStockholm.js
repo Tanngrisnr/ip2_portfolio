@@ -1,22 +1,32 @@
 import Clock from "react-live-clock";
 import Emoji from 'a11y-react-emoji';
 import styled from 'styled-components';
+import DataContext from './DataContext';
+import {useContext} from 'react'
 
-
-
+//future work:
+//https://medium.com/javascript-inside/safely-accessing-deeply-nested-values-in-javascript-99bf72a0855a
+//https://medium.com/@pyrolistical/destructuring-nested-objects-9dabdd01a3b8
 
 const WeatherWidget = styled.div`
 display: flex;
 flex-wrap: wrap;
-flex-direction:column;
+flex-direction:row;
 border-radius:10px;
+text-align:center;
 background-color: ${({ theme }) => theme.primaryLight};
 color: ${({theme}) => theme.primaryDark};
 &>*{
+    display:flex;
+    flex-direction:column;
     flex-grow:1;
     padding:2%;
-    ::first-letter{
+    width:50%;
+    span {
+        ::first-letter{
         text-transform:capitalize;
+            }
+        }
     }
 }
 `;
@@ -25,8 +35,25 @@ font-size:4rem;
 width: 100%;
 `
 
-const CurrentStockholm = ({description, temp, location, weather_id}) => {
+const CurrentStockholm = () => {
 
+    const data =  useContext(DataContext);
+/*     const contextWeatherObject = {
+    description: data.data.weather[0].description,
+    temp: data.data.main.temp,
+    location: data.data.name,
+    weather_id:data.data.weather[0].id
+    } */
+    if(!data.data) {
+        return null
+    }
+    const description = data.data.weather[0].description;
+    const temp = data.data.main.temp;
+    const location = data.data.name;
+    const weather_id = data.data.weather[0].id;
+
+    /* const {data:{ [weather,], {main: temp}, name}} = data; */
+    console.log('hej from CS')
     const icon = {
         emoji: null,
         label: null
@@ -69,8 +96,8 @@ const CurrentStockholm = ({description, temp, location, weather_id}) => {
 
         }
         else if (wData === 800){
-            icon.emoji = "🌤️"
-            icon.label = "sun behind small cloud"
+            icon.emoji = "☀️"
+            icon.label = "sun"
             console.log(icon);
 
         }
@@ -80,13 +107,13 @@ const CurrentStockholm = ({description, temp, location, weather_id}) => {
     return ( 
         <WeatherWidget>
            <StyledEmoji symbol={icon.emoji} label={icon.label}/>
-           <span>{description} </span>
-           <span>{temp} C</span>
+           <div><span>{description}</span>
+           <span>{temp}°C</span></div>
+           <div><span>{location}</span>
             <Clock
             format={'HH:mm:ss'}
             ticking={true}
-            timezone={'Europe/Stockholm'} />
-            <span>{location}</span>
+            timezone={'Europe/Stockholm'} /></div>
         </WeatherWidget>
      );
   }

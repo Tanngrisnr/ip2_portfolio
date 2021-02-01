@@ -8,10 +8,11 @@ import {
   Route,
 } from "react-router-dom";
 import React, { useEffect, useState, useRef } from 'react';
-import WEATHER_DATA from './data';
+import DataContext from './DataContext';
+import {WEATHER_DATA} from './data';
 import CurrentStockholm from "./CurrentStockholm";
 import Contact from './Contact';
-import About from './About';
+import Resume from './Resume';
 import Projects from './Projects';
 import Home from './Home';
 import Navigation from './menu/Navigation';
@@ -20,10 +21,14 @@ import useOnClickOutside from './menu/hooks'
 
 const StyledMain = styled.main`
   display:flex;
+  flex-wrap:wrap;
   flex-direction:row;
-
+  width:100%;
 
 `;
+const StyledHeader = styled.header`
+  width:100%;
+`
 
 function App() {
 
@@ -41,32 +46,35 @@ function App() {
           .then(response => response.json())
           .then(json => setData({ data: json }));
   }, []);
-
+/*   const contextWeatherObject = {
+    description: data.data.weather[0].description,
+    temp: data.data.main.temp,
+    location: data.data.name,
+    weather_id:data.data.weather[0].id
+  } */
 
   return (
   <Router>
+    <DataContext.Provider value={data}>
     <ThemeProvider theme={theme}>
     <Normalize/>
     <div ref={node}>
     <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
     <Navigation open={open} setOpen={setOpen} id={menuId} />
     </div>
-    <StyledSection>
+    <StyledMain>
+      <StyledHeader><h1>Fredrik Wintzell</h1></StyledHeader>
         <Switch>
           <Route path="/contact"><Contact/></Route>
-          <Route path="/about"><About/></Route>
+          <Route path="/Resume"><Resume/></Route>
           <Route path="/projects"><Projects/></Route>
           <Route path="/"><Home/></Route>
         </Switch>
-        {data.data ? <CurrentStockholm
-        description={data.data.weather[0].description}
-        temp={data.data.main.temp}
-        location={data.data.name}
-        weather_id={data.data.weather[0].id}
-        /> : null}
-    </StyledSection>
+    <footer></footer>
+    </StyledMain>
 
     </ThemeProvider>
+    </DataContext.Provider>
   </Router>
   );
 }

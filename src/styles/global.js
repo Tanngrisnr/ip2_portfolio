@@ -16,7 +16,7 @@ export const Normalize = createGlobalStyle`
   body {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     background: ${({ theme }) => theme.primaryDark};
     color: ${({ theme }) => theme.primaryLight};
     height: 100vh;

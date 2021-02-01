@@ -2,6 +2,7 @@
 import {Link} from 'react-router-dom';
 import { bool } from 'prop-types';
 import styled from 'styled-components';
+import CurrentStockholm from '../CurrentStockholm';
 
 const StyledNav = styled.nav`
   display: flex;
@@ -50,9 +51,10 @@ const Navigation = ({open, setOpen, ...props}) => {
     return ( 
         <StyledNav open={open}>
         <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/">Home</StyledLink>
-        <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/about">About Me</StyledLink>
+        <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/Resume">Résumé</StyledLink>
         <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/projects">Projects</StyledLink>
         <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/contact">Contact</StyledLink>
+        <CurrentStockholm/>
         </StyledNav>
      );
 }
