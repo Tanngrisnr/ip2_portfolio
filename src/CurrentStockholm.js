@@ -1,7 +1,7 @@
 import Clock from "react-live-clock";
 import Emoji from 'a11y-react-emoji';
 import styled from 'styled-components';
-import DataContext from './DataContext';
+import {WeatherContext} from './DataContext';
 import {useContext} from 'react'
 
 //future work:
@@ -28,16 +28,17 @@ color: ${({theme}) => theme.primaryDark};
             }
         }
     }
-}
+
 `;
+
 const StyledEmoji = styled(Emoji)`
 font-size:4rem;
 width: 100%;
-`
+`;
 
 const CurrentStockholm = () => {
 
-    const data =  useContext(DataContext);
+    const data =  useContext(WeatherContext);
 /*     const contextWeatherObject = {
     description: data.data.weather[0].description,
     temp: data.data.main.temp,

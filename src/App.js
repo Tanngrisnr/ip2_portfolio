@@ -8,8 +8,8 @@ import {
   Route,
 } from "react-router-dom";
 import React, { useEffect, useState, useRef } from 'react';
-import DataContext from './DataContext';
-import {WEATHER_DATA} from './data';
+import {WeatherContext} from './DataContext';
+import {WEATHER_DATA, RESUME_DATA} from './data';
 import CurrentStockholm from "./CurrentStockholm";
 import Contact from './Contact';
 import Resume from './Resume';
@@ -35,16 +35,17 @@ function App() {
   const menuId = "main-menu";
   const node = useRef(); 
   useOnClickOutside(node, () => setOpen(false));
-
-  const [data, setData] = useState({ data: null });
+  
+  const [rData, setRData] = useState(RESUME_DATA);
+  const [wData, setWData] = useState({ data: null });
   const [open, setOpen] = useState(false);
-  console.log(data);
+  console.log(wData);
 
   useEffect(() => {
       console.log("Hej från useEffect");
       fetch(WEATHER_DATA)
           .then(response => response.json())
-          .then(json => setData({ data: json }));
+          .then(json => setWData({ data: json }));
   }, []);
 /*   const contextWeatherObject = {
     description: data.data.weather[0].description,
@@ -55,7 +56,7 @@ function App() {
 
   return (
   <Router>
-    <DataContext.Provider value={data}>
+    <WeatherContext.Provider value={wData}>
     <ThemeProvider theme={theme}>
     <Normalize/>
     <div ref={node}>
@@ -66,7 +67,7 @@ function App() {
       <StyledHeader><h1>Fredrik Wintzell</h1></StyledHeader>
         <Switch>
           <Route path="/contact"><Contact/></Route>
-          <Route path="/Resume"><Resume/></Route>
+          <Route path="/Resume"><Resume data={rData} /></Route>
           <Route path="/projects"><Projects/></Route>
           <Route path="/"><Home/></Route>
         </Switch>
@@ -74,7 +75,7 @@ function App() {
     </StyledMain>
 
     </ThemeProvider>
-    </DataContext.Provider>
+    </WeatherContext.Provider>
   </Router>
   );
 }

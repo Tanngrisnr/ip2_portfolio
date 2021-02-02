@@ -44,6 +44,11 @@ export const Normalize = createGlobalStyle`
 `;
 
 export const StyledSection = styled.section`
+  padding:5%;
   display:flex;
-
+  flex-direction:column;
+  h2{
+    width:100%;
+    text-align:center;
+  }
 `;

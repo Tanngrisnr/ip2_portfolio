@@ -1,5 +1,6 @@
 import React from 'react';
 
-const DataContext = React.createContext(null);
+export const WeatherContext = React.createContext(null);
 
-export default DataContext;
+
+
