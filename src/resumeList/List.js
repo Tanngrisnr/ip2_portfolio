@@ -3,14 +3,23 @@ import Item from './Item';
 
 const ListArticle = styled.article`
 display:flex;
-flex-direction:column;
+flex-wrap:wrap;
+flex-direction:row;
+align-items:flex-start;
 flex-grow:1;
+justify-content:space-around;
+padding:2%;
+margin:2%;
+h3{
+    width:100%;
+    border-bottom: 2px solid ${({ theme }) => theme.Secondary};
+}
 `;
 
 const List = ({list_id, list, children}) => {
     console.log(list);
     return ( 
-        <article id={list_id}>
+        <ListArticle id={list_id}>
             <h3>{children}</h3>
             {list.map(item=>(
                 <Item
@@ -20,7 +29,7 @@ const List = ({list_id, list, children}) => {
                     img={item.image}
                 />
             ))}
-        </article>
+        </ListArticle>
      );
 }
  

@@ -8,7 +8,7 @@ const StyledNav = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: ${({ theme }) => theme.primaryLight};
+  background: ${({ theme }) => theme.Secondary};
   height: 100vh;
   text-align: left;
   padding: 2rem;
@@ -28,7 +28,7 @@ const StyledLink = styled(Link)`
     padding: 2rem 0;
     font-weight: bold;
     letter-spacing: 0.5rem;
-    color: ${({ theme }) => theme.primaryDark};
+    color: ${({ theme }) => theme.Primary};
     text-decoration: none;
     transition: color 0.3s linear;
     
@@ -53,7 +53,6 @@ const Navigation = ({open, setOpen, ...props}) => {
         <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/">Home</StyledLink>
         <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/Resume">Résumé</StyledLink>
         <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/projects">Projects</StyledLink>
-        <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/contact">Contact</StyledLink>
         <CurrentStockholm/>
         </StyledNav>
      );

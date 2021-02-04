@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {ThemeProvider} from 'styled-components'
-import {Normalize, StyledSection} from './styles/global'
+import {Normalize} from './styles/global'
 import {theme} from './styles/theme';
 import {
   BrowserRouter as Router,
@@ -10,8 +10,6 @@ import {
 import React, { useEffect, useState, useRef } from 'react';
 import {WeatherContext} from './DataContext';
 import {WEATHER_DATA, RESUME_DATA} from './data';
-import CurrentStockholm from "./CurrentStockholm";
-import Contact from './Contact';
 import Resume from './Resume';
 import Projects from './Projects';
 import Home from './Home';
@@ -22,7 +20,8 @@ import useOnClickOutside from './menu/hooks'
 const StyledMain = styled.main`
   display:flex;
   flex-wrap:wrap;
-  flex-direction:row;
+  flex-direction:column;
+  justify-content:flex-start;
   width:100%;
 
 `;
@@ -64,9 +63,8 @@ function App() {
     <Navigation open={open} setOpen={setOpen} id={menuId} />
     </div>
     <StyledMain>
-      <StyledHeader><h1>Fredrik Wintzell</h1></StyledHeader>
+    <StyledHeader><h1>Fredrik Wintzell</h1></StyledHeader>
         <Switch>
-          <Route path="/contact"><Contact/></Route>
           <Route path="/Resume"><Resume data={rData} /></Route>
           <Route path="/projects"><Projects/></Route>
           <Route path="/"><Home/></Route>

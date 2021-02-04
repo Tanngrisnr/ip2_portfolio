@@ -14,8 +14,8 @@ flex-wrap: wrap;
 flex-direction:row;
 border-radius:10px;
 text-align:center;
-background-color: ${({ theme }) => theme.primaryLight};
-color: ${({theme}) => theme.primaryDark};
+background-color: ${({ theme }) => theme.Secondary};
+color: ${({theme}) => theme.Primary};
 &>*{
     display:flex;
     flex-direction:column;
