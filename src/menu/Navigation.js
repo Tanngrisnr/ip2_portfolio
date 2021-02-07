@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import { bool } from 'prop-types';
 import styled from 'styled-components';
 import CurrentStockholm from '../CurrentStockholm';
+import ToggleSwitch from "../ToggleSwitch";
 
 const StyledNav = styled.nav`
   display: flex;
@@ -54,6 +55,7 @@ const Navigation = ({open, setOpen, ...props}) => {
         <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/Resume">Résumé</StyledLink>
         <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/projects">Projects</StyledLink>
         <CurrentStockholm/>
+        <ToggleSwitch/>
         </StyledNav>
      );
 }

@@ -1,21 +1,22 @@
 import styled from "styled-components";
 import {ThemeProvider} from 'styled-components'
 import {Normalize} from './styles/global'
-import {theme} from './styles/theme';
+import {winterTheme, summerTheme} from './styles/theme';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
 import React, { useEffect, useState, useRef } from 'react';
-import {WeatherContext} from './DataContext';
+import {WeatherContext, SwitchContext} from './Context';
 import {WEATHER_DATA, RESUME_DATA} from './data';
 import Resume from './Resume';
 import Projects from './Projects';
 import Home from './Home';
 import Navigation from './menu/Navigation';
 import Burger from "./menu/Burger";
-import useOnClickOutside from './menu/hooks'
+import ToggleSwitch from "./ToggleSwitch";
+import useOnClickOutside from './menu/hooks';
 
 const StyledMain = styled.main`
   display:flex;
@@ -34,7 +35,8 @@ function App() {
   const menuId = "main-menu";
   const node = useRef(); 
   useOnClickOutside(node, () => setOpen(false));
-  
+
+  const [themeState, setThemeState] = useState(false)
   const [rData, setRData] = useState(RESUME_DATA);
   const [wData, setWData] = useState({ data: null });
   const [open, setOpen] = useState(false);
@@ -46,6 +48,11 @@ function App() {
           .then(response => response.json())
           .then(json => setWData({ data: json }));
   }, []);
+
+  const contextSwitchObject = {
+    bool: themeState,
+    setBool:setThemeState
+  }
 /*   const contextWeatherObject = {
     description: data.data.weather[0].description,
     temp: data.data.main.temp,
@@ -56,7 +63,8 @@ function App() {
   return (
   <Router>
     <WeatherContext.Provider value={wData}>
-    <ThemeProvider theme={theme}>
+    <SwitchContext.Provider value={contextSwitchObject}>
+    <ThemeProvider theme={!themeState ? winterTheme:summerTheme }>
     <Normalize/>
     <div ref={node}>
     <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
@@ -73,6 +81,7 @@ function App() {
     </StyledMain>
 
     </ThemeProvider>
+    </SwitchContext.Provider>
     </WeatherContext.Provider>
   </Router>
   );

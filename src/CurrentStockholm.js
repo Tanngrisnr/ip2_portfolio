@@ -1,8 +1,8 @@
 import Clock from "react-live-clock";
 import Emoji from 'a11y-react-emoji';
 import styled from 'styled-components';
-import {WeatherContext} from './DataContext';
-import {useContext} from 'react'
+import {WeatherContext} from './Context';
+import {useContext} from 'react';
 
 //future work:
 //https://medium.com/javascript-inside/safely-accessing-deeply-nested-values-in-javascript-99bf72a0855a
