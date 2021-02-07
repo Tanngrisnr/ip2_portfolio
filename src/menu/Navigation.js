@@ -52,7 +52,7 @@ const Navigation = ({open, setOpen, ...props}) => {
     return ( 
         <StyledNav open={open}>
         <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/">Home</StyledLink>
-        <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/Resume">Résumé</StyledLink>
+        <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/resume">Résumé</StyledLink>
         <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/projects">Projects</StyledLink>
         <CurrentStockholm/>
         <ToggleSwitch/>

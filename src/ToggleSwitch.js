@@ -23,7 +23,7 @@ const Switch = styled.label`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color:#FEF3F8;
     -webkit-transition: .4s;
     transition: .4s;
     :before {
@@ -34,13 +34,13 @@ const Switch = styled.label`
       width: 26px;
       left: 4px;
       bottom: 4px;
-      background-color: white;
+      background-color: ${({ theme, bool }) => bool ? '#B381B3' : '#F5D76E'};
       -webkit-transition: .4s;
       transition: .4s;
     }
   }
   input:checked + span {
-  background-color: #2196F3;
+  background-color: #353238;
   }
 
   input:focus + span {
@@ -59,8 +59,8 @@ const ToggleSwitch = () => {
   console.log("switch bool:" + bool);
   console.log('switch setbool' + setBool);
     return ( 
-      <Switch>
-        <input bool={bool} onClick={() => setBool(!bool)} type="checkbox"/>
+      <Switch bool={bool}>
+        <input onClick={() => setBool(!bool)} type="checkbox"/>
         <span></span>
       </Switch>
      );

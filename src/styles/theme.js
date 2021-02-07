@@ -8,15 +8,15 @@ export const theme = {
   }
  */
 export const winterTheme = {
-    Secondary: '#25283D',
+    Secondary: '#353238',
     Primary: '#F0FCFF',
-    primaryHover: '#E6AF2E',
+    primaryHover: '#B381B3',
     mobile: '576px',
   }
 
 export const summerTheme = {
-  Secondary: '#F0FCFF',
-  Primary: '#25283D',
-  primaryHover: '#E6AF2E',
+  Secondary: '#FEF3F8',
+  Primary: '#436e43',
+  primaryHover: '#F5D76E',
   mobile: '576px',  
 }

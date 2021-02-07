@@ -3,7 +3,7 @@ import {ThemeProvider} from 'styled-components'
 import {Normalize} from './styles/global'
 import {winterTheme, summerTheme} from './styles/theme';
 import {
-  BrowserRouter as Router,
+  BrowserRouter as Router, Link,
   Switch,
   Route,
 } from "react-router-dom";
@@ -71,7 +71,7 @@ function App() {
     <Navigation open={open} setOpen={setOpen} id={menuId} />
     </div>
     <StyledMain>
-    <StyledHeader><h1>Fredrik Wintzell</h1></StyledHeader>
+    <StyledHeader><Link to="/">Fredrik Wintzell</Link></StyledHeader>
         <Switch>
           <Route path="/Resume"><Resume data={rData} /></Route>
           <Route path="/projects"><Projects/></Route>
