@@ -1,9 +1,8 @@
-import styled from "styled-components";
-import { bool, func } from 'prop-types';
-import {ModeContext, SwitchContext} from './Context';
-import {useContext} from 'react';
-
 //<button bool={bool} onClick={() => setBool(!bool)}>toggle</button>
+
+import styled from "styled-components";
+import {SwitchContext} from './Context';
+import {useContext} from 'react';
 
 const Switch = styled.label`
   position: relative;
@@ -56,19 +55,15 @@ const Switch = styled.label`
 
 const ToggleSwitch = () => {
   const {bool, setBool} = useContext(SwitchContext);
+  if (bool){}
   console.log("switch bool:" + bool);
   console.log('switch setbool' + setBool);
     return ( 
       <Switch bool={bool}>
-        <input onClick={() => setBool(!bool)} type="checkbox"/>
+        <input defaultChecked={bool} onClick={() => setBool(!bool)} type="checkbox"/>
         <span></span>
       </Switch>
      );
-};
-
-ToggleSwitch.propTypes = {
-  bool: bool.isRequired,
-  setBool: func.isRequired,
 };
 
 export default ToggleSwitch;

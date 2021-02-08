@@ -36,7 +36,7 @@ function App() {
   const node = useRef(); 
   useOnClickOutside(node, () => setOpen(false));
 
-  const [themeState, setThemeState] = useState(false)
+  const [themeState, setThemeState] = useState(localStorage.getItem('ThemeState') || false);
   const [rData, setRData] = useState(RESUME_DATA);
   const [wData, setWData] = useState({ data: null });
   const [open, setOpen] = useState(false);
@@ -48,6 +48,10 @@ function App() {
           .then(response => response.json())
           .then(json => setWData({ data: json }));
   }, []);
+
+  useEffect(()=>{
+    localStorage.setItem('ThemeState', themeState)
+  }, [themeState]);
 
   const contextSwitchObject = {
     bool: themeState,
