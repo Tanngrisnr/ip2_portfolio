@@ -7,6 +7,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import UseSemiPersistentState from './UseSemiPersistentState'
 import React, { useEffect, useState, useRef } from 'react';
 import {WeatherContext, SwitchContext} from './Context';
 import {WEATHER_DATA, RESUME_DATA} from './data';
@@ -15,7 +16,6 @@ import Projects from './Projects';
 import Home from './Home';
 import Navigation from './menu/Navigation';
 import Burger from "./menu/Burger";
-import ToggleSwitch from "./ToggleSwitch";
 import useOnClickOutside from './menu/hooks';
 
 const StyledMain = styled.main`
@@ -36,22 +36,30 @@ function App() {
   const node = useRef(); 
   useOnClickOutside(node, () => setOpen(false));
 
-  const [themeState, setThemeState] = useState(localStorage.getItem('ThemeState') || false);
+  const isSummer = () => {
+    const d = new Date()
+    const m = d.getMonth()
+    if(m >= 3 && m <= 8){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  //const [themeState, setThemeState] = UseSemiPersistentState('theme', isSummer());
+  const [themeState, setThemeState] = useState(isSummer())
   const [rData, setRData] = useState(RESUME_DATA);
   const [wData, setWData] = useState({ data: null });
   const [open, setOpen] = useState(false);
-  console.log(wData);
+  
 
+  const theme = themeState ? summerTheme:winterTheme; 
   useEffect(() => {
       console.log("Hej från useEffect");
       fetch(WEATHER_DATA)
           .then(response => response.json())
           .then(json => setWData({ data: json }));
   }, []);
-
-  useEffect(()=>{
-    localStorage.setItem('ThemeState', themeState)
-  }, [themeState]);
 
   const contextSwitchObject = {
     bool: themeState,
@@ -68,7 +76,7 @@ function App() {
   <Router>
     <WeatherContext.Provider value={wData}>
     <SwitchContext.Provider value={contextSwitchObject}>
-    <ThemeProvider theme={!themeState ? winterTheme:summerTheme }>
+    <ThemeProvider theme={theme}>
     <Normalize/>
     <div ref={node}>
     <Burger open={open} setOpen={setOpen} aria-controls={menuId} />

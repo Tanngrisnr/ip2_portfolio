@@ -12,11 +12,9 @@ const WeatherWidget = styled.div`
 display: flex;
 flex-wrap: wrap;
 flex-direction:row;
-border-radius:10px;
 text-align:center;
-background-color: ${({ theme }) => theme.Secondary};
 color: ${({theme}) => theme.Primary};
-&>*{
+div{
     display:flex;
     flex-direction:column;
     flex-grow:1;

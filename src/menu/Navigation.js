@@ -9,7 +9,8 @@ const StyledNav = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: ${({ theme }) => theme.Secondary};
+  background: ${({ theme }) => theme.Highlight};
+  color: ${({ theme }) => theme.Primary};
   height: 100vh;
   text-align: left;
   padding: 2rem;
@@ -18,6 +19,8 @@ const StyledNav = styled.nav`
   left: 0;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
   transition: transform 0.3s ease-in-out;
+
+
   
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100%;
@@ -39,8 +42,12 @@ const StyledLink = styled(Link)`
     }
 
     &:hover {
-      color: ${({ theme }) => theme.primaryHover};
+      color: ${({ theme }) => theme.Secondary};
     }
+
+`;
+
+const ToggleWrapper = styled.div`
 
 `;
 
@@ -55,7 +62,7 @@ const Navigation = ({open, setOpen, ...props}) => {
         <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/resume">Résumé</StyledLink>
         <StyledLink tabIndex={tabIndex} onClick={() => setOpen(!open)} to="/projects">Projects</StyledLink>
         <CurrentStockholm/>
-        <ToggleSwitch/>
+        <div><ToggleSwitch/><span>:Toggle theme</span></div>
         </StyledNav>
      );
 }

@@ -38,7 +38,7 @@ export const Normalize = createGlobalStyle`
     display: block;
   }
   a {
-    color: ${({ theme }) => theme.primaryHover};
+    color: ${({ theme }) => theme.Highlight};
     text-decoration: none;
   }
 
