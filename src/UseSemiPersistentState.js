@@ -1,8 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
+/* const isSummer = () => {
+  const d = new Date();
+  const m = d.getMonth();
+  if (m >= 3 && m <= 8) {
+    return true;
+  } else {
+    return false;
+  }
+};
+ */
 const UseSemiPersistentState = (key, initialState) => {
+  let local = localStorage.getItem(key);
+  /*    const [value, setValue] = useState(
+      JSON.parse(localStorage.getItem(key)) || initialState
+    );*/
   const [value, setValue] = useState(
-    localStorage.getItem(key) || initialState
+    local !== null ? JSON.parse(local) : initialState
   );
 
   useEffect(() => {
@@ -11,6 +25,5 @@ const UseSemiPersistentState = (key, initialState) => {
 
   return [value, setValue];
 };
-
 
 export default UseSemiPersistentState;

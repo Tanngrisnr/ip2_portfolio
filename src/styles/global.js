@@ -12,7 +12,9 @@ export const Normalize = createGlobalStyle`
 
   *, *::after, *::before {
     box-sizing: border-box;
+    transition:color .1s linear, background-color .3s linear;
   }
+  
   body {
     display: flex;
     justify-content: center;
