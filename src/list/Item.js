@@ -33,12 +33,13 @@ const StyledItem = styled.div`
 const Item = ({ link, img, alt_text, title, content }) => {
   return (
     <StyledItem>
+      <h4>{title}</h4>
       {img && (
         <figure>
           <img src={img} alt={alt_text} />
         </figure>
       )}
-      {link ?  <h4><a href={link}>{title}</a></h4> : <h4>{title}</h4>}
+      {link && <a href={link}>Link to project</a>}
       {content.map((item, index) => (
         <p key={index}>{item}</p>
       ))}
