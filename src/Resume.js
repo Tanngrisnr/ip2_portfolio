@@ -1,5 +1,5 @@
 import {StyledSection} from './styles/global'
-import List from './resumeList/List'
+import List from './list/List'
 
 const Qualifications = ({data}) => {
     console.log(data)

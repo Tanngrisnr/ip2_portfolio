@@ -30,6 +30,7 @@ const StyledHeader = styled.header`
   width:100%;
   text-align:center;
   font-size:3rem;
+  
   a:hover {
     color:${({theme}) => theme.Secondary}
   }
