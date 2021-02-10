@@ -15,18 +15,18 @@ const ListArticle = styled.article`
   }
 `;
 
-const List = ({ list_id, list, children }) => {
+const List = ({ list, children }) => {
   console.log(list);
   return (
     <>
-      <ListArticle key={list_id}>
-        <h3>{children}</h3>
+      <ListArticle>
+        {children && <h3>{children}</h3>}
         {list.map((item) => (
           <Item
             key={item.key}
             title={item.title}
             content={item.content}
-            img={item.image}
+            img={item.img}
             alt_text={item.alt_text}
             link={item.link}
           />

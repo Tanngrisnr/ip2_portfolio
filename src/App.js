@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import UseSemiPersistentState from "./UseSemiPersistentState";
 import React, { useEffect, useState, useRef } from "react";
 import { WeatherContext, SwitchContext } from "./Context";
-import { WEATHER_DATA, RESUME_DATA as rData } from "./data";
+import { WEATHER_DATA, RESUME_DATA as rData, PROJECT_DATA as pData } from "./data";
 import Resume from "./Resume";
 import Projects from "./Projects";
 import Home from "./Home";
@@ -99,7 +99,7 @@ function App() {
                   <Resume data={rData} />
                 </Route>
                 <Route path="/projects">
-                  <Projects />
+                  <Projects data={pData} />
                 </Route>
                 <Route path="/">
                   <Home />
