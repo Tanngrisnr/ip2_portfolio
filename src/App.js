@@ -29,10 +29,12 @@ const StyledHeader = styled.header`
   a {
   color:${({theme}) => theme.Highlight};
   font-weight:900;
+  text-shadow:2px 2px ${({theme}) => theme.Secondary}
 
   }
   a:hover {
     color: ${({ theme }) => theme.Secondary};
+    text-shadow:2px 2px ${({theme}) => theme.Highlight}
   }
 `;
 
@@ -73,12 +75,6 @@ function App() {
     bool: themeState,
     setBool: setThemeState,
   };
-  /*   const contextWeatherObject = {
-    description: data.data.weather[0].description,
-    temp: data.data.main.temp,
-    location: data.data.name,
-    weather_id:data.data.weather[0].id
-  } */
 
   return (
     <Router>

@@ -4,6 +4,7 @@ const StyledItem = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1 2% 1;
+  height: auto;
   padding: 2%;
   margin: 3%;
   border-radius: 10px;
