@@ -13,18 +13,18 @@ import Home from "./Home";
 import Navigation from "./menu/Navigation";
 import Burger from "./menu/Burger";
 import useOnClickOutside from "./menu/hooks";
+import Footer from './Footer'
 
 const StyledMain = styled.main`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: flex-start;
   width: 100%;
 `;
 const StyledHeader = styled.header`
   width: 100%;
   text-align: center;
-  font-size: 4rem;
+  font-size: 5em;
 
   a {
   color:${({theme}) => theme.Highlight};
@@ -37,6 +37,7 @@ const StyledHeader = styled.header`
     text-shadow:2px 2px ${({theme}) => theme.Highlight}
   }
 `;
+
 
 const isSummer = () => {
   const d = new Date();
@@ -101,7 +102,7 @@ function App() {
                   <Home />
                 </Route>
               </Switch>
-              <footer></footer>
+              <Footer/>
             </StyledMain>
           </ThemeProvider>
         </SwitchContext.Provider>

@@ -40,5 +40,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "deploy": "npm run build && cp CNAME ./build/CNAME && cd build && cp index.html 200.html && surge ./"
+  
 }

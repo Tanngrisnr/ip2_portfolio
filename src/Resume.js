@@ -2,9 +2,11 @@ import {StyledSection} from './styles/global'
 import List from './list/List'
 
 
+
 const Resume = ({data}) => {
     console.log(data)
     return ( 
+
         <StyledSection>
         <h2>Résumé</h2>
         <List key="education" list={data[0]}>Education</List>

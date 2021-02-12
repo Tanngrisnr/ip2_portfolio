@@ -31,11 +31,6 @@ export const Normalize = createGlobalStyle`
     text-align: center;
     text-transform: uppercase;
   }
-  img {
-    border-radius: 5px;
-    height: auto;
-    width: 10rem;
-  }
   small {
     display: block;
   }
@@ -54,7 +49,7 @@ export const StyledSection = styled.section`
   max-width:80%;
   align-self: center;
   h2{
-
+    font-size:2rem;
     flex-grow:2;
     text-align:center;
   }
