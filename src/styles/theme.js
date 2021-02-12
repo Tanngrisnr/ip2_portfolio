@@ -16,7 +16,7 @@ export const winterTheme = {
 
 export const summerTheme = {
   Secondary: '#FEF3F8',
-  Primary: '#436e43',
-  Highlight: '#F5D76E',
+  Primary: '#365B6D',
+  Highlight: '#24a159',
   mobile: '576px',  
 }

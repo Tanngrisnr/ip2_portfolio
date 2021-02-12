@@ -1,6 +1,6 @@
 
 
-export const WEATHER_DATA = 'http://api.openweathermap.org/data/2.5/weather?q=Stockholm&units=metric&appid=f2eb762353dd6b9f926b406db34c6ae1';
+export const WEATHER_DATA = 'https://api.openweathermap.org/data/2.5/weather?q=Stockholm&units=metric&appid=f2eb762353dd6b9f926b406db34c6ae1';
 
 export const RESUME_DATA = [
     [

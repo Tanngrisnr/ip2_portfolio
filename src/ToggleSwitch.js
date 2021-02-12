@@ -22,7 +22,7 @@ const Switch = styled.label`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color:#436e43;
+    background-color:#365B6D;
     -webkit-transition: .4s;
     transition: .4s;
     :before {
@@ -60,7 +60,7 @@ const ToggleSwitch = () => {
   console.log("switch bool:" + bool);
   console.log('switch setbool' + setBool);
     return ( 
-      <Switch for="checkbox" bool={bool}>
+      <Switch bool={bool}>
         <input defaultChecked={bool} onClick={() => setBool(!bool)} type="checkbox"/>
         <span></span>
       </Switch>
