@@ -18,6 +18,7 @@ const HomePage = styled.section`
   }
   figure {
       flex-grow:1;
+      flex-basis:0;
       flex-basis:50%;
 
       img {
@@ -32,13 +33,14 @@ const HomePage = styled.section`
   }
   article {
       flex-grow:2;
-      background-color:${({ theme }) => theme.Secondary};
-      color:${({ theme }) => theme.Primary};
+      flex-basis:40%;
       padding:2%;
-      border-radius:10px;
       flex-grow:2;
       display:flex;
       flex-direction:column;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
   `;
 

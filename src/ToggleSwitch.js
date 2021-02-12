@@ -60,7 +60,7 @@ const ToggleSwitch = () => {
   console.log("switch bool:" + bool);
   console.log('switch setbool' + setBool);
     return ( 
-      <Switch bool={bool}>
+      <Switch for="checkbox" bool={bool}>
         <input defaultChecked={bool} onClick={() => setBool(!bool)} type="checkbox"/>
         <span></span>
       </Switch>

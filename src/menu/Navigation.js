@@ -17,6 +17,7 @@ const StyledNav = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
+  box-shadow:${({ open }) => open ?  "-1px 0 5px 5px #141414" : "none"};
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
   transition: transform 0.3s ease-in-out;
 
