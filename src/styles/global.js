@@ -38,7 +38,7 @@ export const Normalize = createGlobalStyle`
     color: ${({ theme }) => theme.Highlight};
     text-decoration: none;
   }
-
+  
 `;
 
 export const StyledSection = styled.section`

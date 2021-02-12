@@ -18,8 +18,7 @@ const HomePage = styled.section`
   }
   figure {
       flex-grow:1;
-      flex-basis:0;
-      flex-basis:50%;
+      flex-basis:30%;
 
       img {
         border: 2px solid ${({ theme }) => theme.Secondary};
