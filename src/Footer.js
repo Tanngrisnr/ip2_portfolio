@@ -2,14 +2,16 @@ import styled from "styled-components";
 
 const StyledFooter = styled.footer`
   display:flex;
-  flex-grow:0;
-  flex-shrink:0;
   flex-direction:row;
   margin:0 auto;
   width:100%;
+  @media (max-width: 1366px) {
+    flex-direction: column;
+  }
     a {
       background-color: ${({theme}) => theme.Secondary};
       flex-grow:1;
+      flex-basis:30%;
       text-align:center;
       padding:5%;
       transition: flex-grow 0.3s linear;
@@ -20,6 +22,7 @@ const StyledFooter = styled.footer`
       background-color: ${({theme}) => theme.Highlight};
       flex-grow:2;
     }
+
 `;
 
 const Footer = () => {

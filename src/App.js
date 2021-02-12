@@ -36,6 +36,25 @@ const StyledHeader = styled.header`
     color: ${({ theme }) => theme.Secondary};
     text-shadow:2px 2px ${({theme}) => theme.Highlight}
   }
+  div {
+    width:40%;
+    margin:0 auto;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    font-size:1rem;
+    text-align:center;
+    @media (max-width: 750px) {
+    flex-direction: column;
+    }
+    a {
+      text-shadow:none;
+    }
+    a:hover {
+      text-shadow:none;
+    }
+  }
 `;
 
 
@@ -90,6 +109,9 @@ function App() {
             <StyledMain>
               <StyledHeader>
                 <Link to="/">Fredrik Wintzell</Link>
+                <div><a href="https://github.com/Tanngrisnr">My Github</a>
+                <a href="https://www.linkedin.com/in/fredrik-wintzell-3689411b4/">My Linkedin</a>
+                <a href="mailto:fredrik.wintzell@gmail.com">Contact Me</a></div>
               </StyledHeader>
               <Switch>
                 <Route path="/Resume">
