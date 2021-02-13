@@ -85,7 +85,6 @@ function App() {
 
   const theme = themeState ? summerTheme : winterTheme;
   useEffect(() => {
-    console.log("Hej från useEffect");
     fetch(WEATHER_DATA)
       .then((response) => response.json())
       .then((json) => setWData({ data: json }));

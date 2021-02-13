@@ -56,9 +56,7 @@ const Switch = styled.label`
 const ToggleSwitch = () => {
   const {bool, setBool} = useContext(SwitchContext);
   
-  if (bool){}
-  console.log("switch bool:" + bool);
-  console.log('switch setbool' + setBool);
+
     return ( 
       <Switch bool={bool}>
         <input defaultChecked={bool} onClick={() => setBool(!bool)} type="checkbox"/>

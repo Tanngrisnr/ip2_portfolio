@@ -52,7 +52,7 @@ const CurrentStockholm = () => {
     const weather_id = data.data.weather[0].id;
 
     /* const {data:{ [weather,], {main: temp}, name}} = data; */
-    console.log('hej from CS')
+
     const icon = {
         emoji: null,
         label: null

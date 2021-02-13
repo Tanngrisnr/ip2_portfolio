@@ -16,7 +16,6 @@ const ListArticle = styled.article`
 `;
 
 const List = ({ list, children }) => {
-  console.log(list);
   return (
     <>
       <ListArticle>
