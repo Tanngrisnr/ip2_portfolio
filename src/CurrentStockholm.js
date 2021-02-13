@@ -62,42 +62,36 @@ const CurrentStockholm = () => {
         if (wData >= 600 && wData <= 622) {
             icon.emoji = "🌨️"
             icon.label = "cloud with snow"
-            console.log(icon);
+
         }
         else if (wData >= 500 && wData <= 531){
             icon.emoji = "🌧️"
             icon.label = "clould with rain"
-            console.log(icon);
 
         }
         else if (wData >= 300 && wData <= 321){
             icon.emoji = "🌦️"
             icon.label = "sun behind rain cloud"
-            console.log(icon);
 
         }
         else if (wData >= 200 && wData <= 232){
             icon.emoji = "⛈️"
             icon.label = "cloud with rain and lightning"
-            console.log(icon);
 
         }
         else if (wData >= 701 && wData <= 771){
             icon.emoji = "🌫️"
             icon.label = "fog"
-            console.log(icon);
 
         }
         else if (wData >= 801 && wData <= 804){
             icon.emoji = "☁️"
             icon.label = "cloud"
-            console.log(icon);
 
         }
         else if (wData === 800){
             icon.emoji = "☀️"
             icon.label = "sun"
-            console.log(icon);
 
         }
     

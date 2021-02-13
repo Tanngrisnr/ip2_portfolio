@@ -4,7 +4,6 @@ import List from './list/List'
 
 
 const Resume = ({data}) => {
-    console.log(data)
     return ( 
 
         <StyledSection>
