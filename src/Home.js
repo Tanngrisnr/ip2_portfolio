@@ -49,7 +49,7 @@ const Home = () => {
         <HomePage>
             <h2>About Me</h2>
             <article>
-            <p>I am a front-end developer and UX-designer passionate about web desing, programming and creating new and innovative things.</p>
+            <p>I am a front-end developer and UX-designer passionate about web design, programming and creating new and innovative things.</p>
             <p>I'm a graduate from Södertörn University as well as KYH vocational university in Sweden.</p>
             </article>
             <figure><img src="https://raw.githubusercontent.com/Tanngrisnr/ip2_portfolio/main/src/images/designer.JPG" alt="A person in a blue checkered shirt crouching and leaning against a wall, Fredrik Wintzell"/></figure>
