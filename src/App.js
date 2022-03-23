@@ -6,14 +6,18 @@ import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import UseSemiPersistentState from "./UseSemiPersistentState";
 import React, { useEffect, useState, useRef } from "react";
 import { WeatherContext, SwitchContext } from "./Context";
-import { WEATHER_DATA, RESUME_DATA as rData, PROJECT_DATA as pData } from "./data";
+import {
+  WEATHER_DATA,
+  RESUME_DATA as rData,
+  PROJECT_DATA as pData,
+} from "./data";
 import Resume from "./Resume";
 import Projects from "./Projects";
 import Home from "./Home";
 import Navigation from "./menu/Navigation";
 import Burger from "./menu/Burger";
 import useOnClickOutside from "./menu/hooks";
-import Footer from './Footer'
+import Footer from "./Footer";
 
 const StyledMain = styled.main`
   display: flex;
@@ -27,36 +31,34 @@ const StyledHeader = styled.header`
   font-size: 5em;
 
   a {
-  color:${({theme}) => theme.Highlight};
-  font-weight:900;
-  text-shadow:2px 2px ${({theme}) => theme.Secondary}
-
+    color: ${({ theme }) => theme.Highlight};
+    font-weight: 900;
+    text-shadow: 2px 2px ${({ theme }) => theme.Secondary};
   }
   a:hover {
     color: ${({ theme }) => theme.Secondary};
-    text-shadow:2px 2px ${({theme}) => theme.Highlight}
+    text-shadow: 2px 2px ${({ theme }) => theme.Highlight};
   }
   div {
-    width:40%;
-    margin:0 auto;
-    display:flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-    justify-content:space-between;
-    font-size:1rem;
-    text-align:center;
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 1rem;
+    text-align: center;
     @media (max-width: 750px) {
-    flex-direction: column;
+      flex-direction: column;
     }
     a {
-      text-shadow:none;
+      text-shadow: none;
     }
     a:hover {
-      text-shadow:none;
+      text-shadow: none;
     }
   }
 `;
-
 
 const isSummer = () => {
   const d = new Date();
@@ -72,13 +74,11 @@ function App() {
   const menuId = "main-menu";
   const node = useRef();
   useOnClickOutside(node, () => setOpen(false));
-
+  let isItSummer = isSummer();
   const [themeState, setThemeState] = UseSemiPersistentState(
     "theme",
-    isSummer()
+    isItSummer
   );
-  //const [themeState, setThemeState] = useState(isSummer())
-  //const [rData, setRData] = useState(RESUME_DATA);
 
   const [wData, setWData] = useState({ data: null });
   const [open, setOpen] = useState(false);
@@ -108,12 +108,16 @@ function App() {
             <StyledMain>
               <StyledHeader>
                 <Link to="/">Fredrik Wintzell</Link>
-                <div><a href="https://github.com/Tanngrisnr">My Github</a>
-                <a href="https://www.linkedin.com/in/fredrik-wintzell-3689411b4/">My Linkedin</a>
-                <a href="mailto:fredrik.wintzell@gmail.com">Contact Me</a></div>
+                <div>
+                  <a href="https://github.com/Tanngrisnr">My Github</a>
+                  <a href="https://www.linkedin.com/in/fredrik-wintzell-3689411b4/">
+                    My Linkedin
+                  </a>
+                  <a href="mailto:fredrik.wintzell@gmail.com">Contact Me</a>
+                </div>
               </StyledHeader>
               <Switch>
-                <Route path="/Resume">
+                <Route path="/resume">
                   <Resume data={rData} />
                 </Route>
                 <Route path="/projects">
@@ -123,7 +127,7 @@ function App() {
                   <Home />
                 </Route>
               </Switch>
-              <Footer/>
+              <Footer />
             </StyledMain>
           </ThemeProvider>
         </SwitchContext.Provider>
