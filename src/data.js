@@ -64,31 +64,21 @@ export const RESUME_DATA = [
       key: 7,
       title: "Programming",
       content: [
-        "I know how to develop web pages using HTML, CSS and Javascript.",
-        "I am also experienced in working in javascript with object-oriented programming to control behavior of websites as well as javascript frameworks such as React.",
-        "I also have experience working with Wordpress and PHP in building pages, as well as acreating themes and child-themes. Beyond this I also have experience in working with Bootstrap and Sass/SCSS.",
+        " HTML, CSS, JavaScript, React, Node.js, Express.js, MongoDB, Mongoose.js, JSON Web Tokens, i18Next, API-hantering, Firebase, Sass/SCSS, Material UI, Bootstrap",
       ],
     },
     {
       key: 8,
-      title: "Prototyping tools",
+      title: "Other software",
       content: [
-        "I have experience with working in tools such as Figma, Adobe Experience Design and Sketch to create UX-prototypes.",
-        "Though my I am most skilled and comfortable with Figma, which I have the most experience with.",
+        "Microsoft Azure, Adobe Illustrator, Adobe Indesign, Figma, Sketch, Microsoft Office.",
       ],
     },
     {
       key: 9,
-      title: "Microsoft Office",
+      title: "Methods",
       content: [
-        "I am experienced in working with the different tools available in Microsoft Office.",
-      ],
-    },
-    {
-      key: 10,
-      title: "Adobe Creative Cloud",
-      content: [
-        "I have basic knowledge and experience in working with Adobe programs such as Adobe Illustrator, Photoshop, Indesign and Experience Design.",
+        "I am experienced in working as part of agile teams and projects such as Scrum as well as the UX-design methods such as Design Thinking.",
       ],
     },
   ],
