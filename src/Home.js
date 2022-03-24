@@ -57,7 +57,17 @@ const Home = () => {
       <h2>About Me</h2>
       <article>
         <p>
-          I'm a front-end developer working on becoming full-stack amd looking
+          I am a driven front-end developer with an eye for and competency in
+          design. I have a a great enthusiasm for webbdesign and have always had
+          a great interest in media and technology. As a developer I'm
+          passionate about design and I put a great deal of focus on developing
+          and implementing dynamik and scalable user interfaces and webb
+          applications. Right now I am looking for a role in front-end
+          development but if I fit the bill on something else please let me
+          know.
+        </p>
+        <p>
+          I'm a front-end developer working on becoming full-stack and looking
           for the next step to build my career. I have most experience working
           in React.js as well as some Back-end work in Node.js utilizing
           Express.js.

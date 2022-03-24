@@ -4,6 +4,36 @@ export const WEATHER_DATA =
 export const RESUME_DATA = [
   [
     {
+      key: 4,
+      title: "Sigma Technology Cloud",
+      content: [
+        "Position: Intern  2021/10/04—2022/05",
+        "Sigma Technology Cloud is an IT consultancy company with a large amount of expertise in cloud services such as Azure and Amazon Web Services. As an intern I worked with two different projects.",
+        "In the first project I developed and implemented an event booking platform. It was an internal projekt where I worked according to Scrum. My role as the sole developer was as a fullstack developer and I built the front-end in React.js and back-end using Node.js, Express.js and MongoDB. Deployment was done through Azure App Service using Github Actions as a build pipeline.",
+        "In the second project I worked as part of a team and had the role of front-end developer in a smaller agile team. As the front-end developer I used React.js to set up the front-end, implemented a user interface put together by the project’s UX-designer to visualize data from a hydroponic Internet of Things artifact. In this project I also worked with AWS as a data host and deployment method.",
+      ],
+    },
+    {
+      key: 5,
+      title: "Kairos Future",
+      content: [
+        "Position: Intern 2019/02/25—2019/03/28",
+        "Took part in testing and UX-research for a Kairos Future Digitool called Co:Tunity Trendscan, a tool for monotoring different trends and analysis of markets.",
+        "As part of my internship I also took part in design meetings and created a quick-start manual for use of Co:tunity",
+      ],
+    },
+    {
+      key: 6,
+      title: "Postnord",
+      content: [
+        "Position: Mail Carrier, intermittenly 2018-present",
+        "When I am not studying or working on polishing my skills as a developer I deliver mail in my hometown of Nacka.",
+        "The work involves handling certain digital tools to do things like empty mailboxes and scan packages for delivery.",
+      ],
+    },
+  ],
+  [
+    {
       key: 0,
       title: "Södertörn University, Bachelor's degree",
       content: [
@@ -28,35 +58,7 @@ export const RESUME_DATA = [
       ],
     },
   ],
-  [
-    {
-      key: 4,
-      title: "Sigma Technology Cloud",
-      content: [
-        "Position: Intern  2021/10/04—2022/05",
-        "Sigma Technology Cloud is a consulting firm in the IT-business primarily working with different cloud services such as Azure and Amazon Web Services. I built for them an event booking platform with React.js as front-end and Node.js, Express.js and MongoDB as Back-end Deploy genomfördes med Azure App Service.",
-        "I also worked on creating a React.js front-end solution to visualize data from an Internet of Things hydroponics artefact, in this case I worked with AWS and in implementing an existing UX design.",
-      ],
-    },
-    {
-      key: 5,
-      title: "Kairos Future",
-      content: [
-        "Position: Intern 2019/02/25—2019/03/28",
-        "Took part in testing and UX-research for a Kairos Future Digitool called Co:Tunity Trendscan, a tool for monotoring different trends and analysis of markets.",
-        "As part of my internship I also took part in design meetings and created a quick-start manual for use of Co:tunity",
-      ],
-    },
-    {
-      key: 6,
-      title: "Postnord",
-      content: [
-        "Position: Mail Carrier, intermittenly 2018-present",
-        "When I am not studying or working on polishing my skills as a developer I deliver mail in my hometown of Nacka.",
-        "The work involves handling certain digital tools to do things like empty mailboxes and scan packages for delivery.",
-      ],
-    },
-  ],
+
   [
     {
       key: 7,
