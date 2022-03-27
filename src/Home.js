@@ -61,7 +61,7 @@ const Home = () => {
           design. I have a a great enthusiasm for webbdesign and have always had
           a great interest in media and technology. As a developer I'm
           passionate about design and I put a great deal of focus on developing
-          and implementing dynamik and scalable user interfaces and webb
+          and implementing dynamic and scalable user interfaces and webb
           applications. Right now I am looking for a role in front-end
           development but if I fit the bill on something else please let me
           know.
